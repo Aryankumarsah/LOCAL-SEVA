@@ -25,8 +25,8 @@ export function ProviderCard({ provider }: ProviderCardProps) {
             <Image
               src={providerImage.imageUrl}
               alt={provider.name}
-              layout="fill"
-              objectFit="cover"
+              fill
+              className="object-cover"
               data-ai-hint={providerImage.imageHint}
             />
           )}

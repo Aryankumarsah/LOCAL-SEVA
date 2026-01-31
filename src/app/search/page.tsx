@@ -31,10 +31,11 @@ export default async function SearchPage({ searchParams }: SearchPageProps) {
     );
   }
 
-  const { recommendations } = await getMLPoweredServiceRecommendations({
+  const result = await getMLPoweredServiceRecommendations({
     serviceType,
     location,
   });
+  const recommendations = result?.recommendations || [];
 
   return (
     <div className="container mx-auto px-4 py-8">

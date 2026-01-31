@@ -1,5 +1,8 @@
+'use client';
+
 import { Star } from 'lucide-react';
 import { cn } from '@/lib/utils';
+import { useId } from 'react';
 
 interface StarRatingProps {
   rating: number;
@@ -12,7 +15,8 @@ export function StarRating({ rating, totalStars = 5, className }: StarRatingProp
   const partialStar = rating % 1 > 0;
   const emptyStars = totalStars - fullStars - (partialStar ? 1 : 0);
   
-  const partialFillId = `grad-${Math.random()}`;
+  const id = useId();
+  const partialFillId = `grad-${id}`;
   const partialPercentage = Math.round((rating % 1) * 100);
 
   return (
